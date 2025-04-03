@@ -1,0 +1,58 @@
+/* Fonte Para Palavras Em Destaque */
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-SemiBoldItalic.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../../assets/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
