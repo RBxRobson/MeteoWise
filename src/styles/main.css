@@ -1,0 +1,25 @@
+@import './fonts/index.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --color-cebo29: oklch(0.72 0.11 178);
+}
+
+html {
+  font-family: var(--font-inter);
+}
+
+.btn {
+  @apply rounded-lg px-4 py-2 transition;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-black hover:bg-gray-300;
+}
