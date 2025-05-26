@@ -25,7 +25,10 @@ const citySlice = createSlice({
   initialState,
   reducers: {
     setCity: (state, action: PayloadAction<CityState>) => {
-      state = action.payload
+      state.coordinates = action.payload.coordinates
+      state.name = action.payload.name
+      state.country = action.payload.country
+      state.state = action.payload.state
     },
   },
 })
