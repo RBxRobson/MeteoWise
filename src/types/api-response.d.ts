@@ -47,6 +47,7 @@ export interface DetailedForecastResponse {
     temperature_2m_max: number[]
     weathercode: number[]
     precipitation_sum: number[]
+    precipitation_probability_mean: number
   }
 }
 
