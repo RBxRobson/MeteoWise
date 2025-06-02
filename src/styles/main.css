@@ -6,27 +6,16 @@
   --font-oswald: 'Oswald', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 
-  --color-sunny: theme('colors.sky.400');
-  --color-cloudy: theme('colors.gray.400');
-  --color-rainy: theme('colors.slate.400');
+  --color-sunny: #a5cbd9;
+  --color-cloudy: #b8c6cf;
+  --color-rainy: #9fb4bf;
+  --color-activeday: #ffffff;
 
-  --text-main: #151515;
-  --text-muted: #353434;
+  --color-txmain: #f1f1f1;
+  --color-txmuted: #8f8f8f;
 }
 
 html {
   font-family: var(--font-inter);
-  color: var(--text-main);
-}
-
-.btn {
-  @apply rounded-lg px-4 py-2 transition;
-}
-
-.btn-primary {
-  @apply bg-blue-500 text-white hover:bg-blue-600;
-}
-
-.btn-secondary {
-  @apply bg-gray-200 text-black hover:bg-gray-300;
+  color: var(--color-txmain);
 }
