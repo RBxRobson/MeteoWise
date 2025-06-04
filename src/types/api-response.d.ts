@@ -1,3 +1,5 @@
+import { NumberDomain } from 'recharts/types/util/types'
+
 export interface DailyForecast {
   date: string // YYYY-MM-DD
   temperature_min: number
@@ -15,8 +17,8 @@ export interface WeeklyForecastResponse {
 }
 
 export interface HourlyRainChance {
-  time: string // HH:MM
-  precipitation_probability: number // 0 a 100%
+  time: string
+  precipitation_probability: number
 }
 
 export interface DetailedDayForecast {
@@ -24,11 +26,11 @@ export interface DetailedDayForecast {
   temperature_min: number
   temperature_max: number
   precipitation_sum: number
-  current_temperature?: number // Só se for o dia atual
+  current_temperature?: NumberDomain
   weather_code: number
   humidity: number
   wind_speed_kmh: number
-  hourly_rain_chance: HourlyRainChance[] // De 08:00 a 23:00
+  hourly_rain_chance: HourlyRainChance[]
 }
 
 export interface DetailedForecastResponse {
@@ -41,13 +43,14 @@ export interface DetailedForecastResponse {
     relativehumidity_2m: number[]
     precipitation_probability: number[]
     windspeed_10m: number[]
+    precipitation: number[]
   }
   daily: {
     temperature_2m_min: number[]
     temperature_2m_max: number[]
     weathercode: number[]
     precipitation_sum: number[]
-    precipitation_probability_mean: number
+    precipitation_probability_max: number
   }
 }
 
