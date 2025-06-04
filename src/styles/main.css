@@ -1,18 +1,19 @@
 @import './fonts/index.css';
 @import 'tailwindcss';
+@import 'tailwind-scrollbar-hide/v4';
 
 @theme {
   --font-inter: 'Inter', sans-serif;
   --font-oswald: 'Oswald', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 
-  --color-sunny: #a5cbd9;
-  --color-cloudy: #b8c6cf;
+  --color-sunny: #a2c0d0;
+  --color-cloudy: #a5b3bc;
   --color-rainy: #9fb4bf;
   --color-activeday: #ffffff;
 
-  --color-txmain: #f1f1f1;
-  --color-txmuted: #8f8f8f;
+  --color-txmain: #506877;
+  --color-txmuted: #708ea0;
 }
 
 html {
