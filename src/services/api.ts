@@ -84,11 +84,16 @@ export const weatherApi = createApi({
             daily: [
               'temperature_2m_min',
               'temperature_2m_max',
-              'precipitation_probability_mean',
+              'precipitation_probability_max',
               'weathercode',
               'precipitation_sum',
             ].join(','),
-            hourly: ['relativehumidity_2m', 'precipitation_probability', 'windspeed_10m'].join(','),
+            hourly: [
+              'relativehumidity_2m',
+              'precipitation_probability',
+              'windspeed_10m',
+              'precipitation',
+            ].join(','),
             current_weather: true,
             timezone: 'auto',
             start_date: date,
