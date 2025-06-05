@@ -45,7 +45,7 @@ const WeekBar = () => {
   const bgColor = setBgColor(weatherCode)
 
   return (
-    <div className="fixed top-0 right-0 h-screen w-54 overflow-x-hidden overflow-y-auto">
+    <div className="scrollbar-hide fixed top-0 right-0 h-screen w-54 overflow-x-hidden overflow-y-auto">
       <ul
         className={`float-right flex h-full w-48 flex-col py-2 transition duration-200 ${bgColor}`}
       >
@@ -55,7 +55,7 @@ const WeekBar = () => {
             <li
               key={forecast.date}
               onClick={() => handleSelectDay(forecast.date, forecast.weather_code)}
-              className={`cursor-pointer border-t border-t-gray-300/30 px-2 py-4 transition-all duration-200 ${isActive ? 'relative z-[1] -translate-y-1 scale-[1.06] rounded-l-lg shadow-[0_4px_12px_rgba(0,0,0,0.2)]' : ''} ${bgColor} first:border-t-0`}
+              className={`border-txmuted/60 cursor-pointer border-t px-2 py-4 transition-all duration-200 ${isActive ? 'relative z-[1] -translate-y-1 scale-[1.06] rounded-l-lg' : ''} ${bgColor} first:border-t-0`}
               role="button"
               tabIndex={0}
             >
