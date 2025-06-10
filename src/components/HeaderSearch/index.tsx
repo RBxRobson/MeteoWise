@@ -73,8 +73,9 @@ const HeaderSearch = () => {
   return (
     <header className="w-full">
       <form
-        className="text-txmain mx-auto flex max-w-3xl cursor-pointer items-center rounded-full border border-gray-300/30 backdrop-brightness-85"
+        className="text-txmain border-txmuted/60 focus-within:border-txmuted/100 mx-auto flex max-w-3xl cursor-pointer items-center rounded-full border backdrop-brightness-[0.97]"
         onSubmit={handleSubmit}
+        autoComplete="off"
       >
         <label htmlFor="search_city" className="h-full cursor-pointer px-4 pl-6">
           <svg
@@ -103,7 +104,7 @@ const HeaderSearch = () => {
           onBlur={handleBlur}
         />
         <button
-          className="h-full border-l border-gray-300/30 px-4 py-2 pr-6 disabled:bg-amber-950"
+          className="border-txmuted/60 h-full cursor-pointer border-l px-4 py-2 pr-6 disabled:cursor-wait"
           type="submit"
           disabled={isFetching}
           aria-label="Buscar cidade"
