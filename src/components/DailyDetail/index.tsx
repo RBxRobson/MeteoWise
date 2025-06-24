@@ -87,7 +87,7 @@ const DailyDetail = () => {
           <div>
             {isCurrentDay ? (
               <p className="text-5xl font-bold">
-                {currentTemp !== undefined ? `${currentTemp}°C` : '--°C'}
+                {currentTemp !== undefined ? `${Math.round(currentTemp)}°C` : '--°C'}
               </p>
             ) : (
               <p className="text-5xl font-semibold">
