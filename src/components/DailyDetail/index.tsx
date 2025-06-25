@@ -1,39 +1,20 @@
 import { useSelector } from 'react-redux'
 import { isToday, parseISO } from 'date-fns'
 
-import { useGetDetailedForecastQuery } from '../../services/api'
 import { RootState } from '../../store'
+import { DetailedForecastResponse } from '../../types/api-response'
 import { calculateDailyAverages } from '../../utils/calculateDailyAverages'
 import { formatCapitalizedDate } from '../../utils/formatCapitalizedDate'
 import { setWeatherIcon } from '../../utils/setWeatherIcon'
 import { getWeatherDescription } from '../../utils/weatherCodes'
 import Infographic from '../Infographic'
 
-const DailyDetail = () => {
+type Props = {
+  data: DetailedForecastResponse
+}
+
+const DailyDetail = ({ data }: Props) => {
   const { date } = useSelector((state: RootState) => state.day)
-  const { coordinates } = useSelector((state: RootState) => state.city)
-  const { latitude, longitude } = coordinates
-
-  const { data, isLoading, isError } = useGetDetailedForecastQuery(
-    { latitude, longitude, date, isToday: true },
-    { skip: !latitude || !longitude || !date },
-  )
-
-  if (isLoading) {
-    return (
-      <div className="text-muted-foreground py-10 text-center text-sm">
-        Carregando previsão detalhada...
-      </div>
-    )
-  }
-
-  if (isError || !data) {
-    return (
-      <div className="py-10 text-center text-red-500">
-        Não foi possível carregar os dados meteorológicos.
-      </div>
-    )
-  }
 
   const { humidity, wind } = calculateDailyAverages(data)
   const isCurrentDay = isToday(parseISO(date))
@@ -101,7 +82,7 @@ const DailyDetail = () => {
         </div>
       </div>
 
-      {/* Hourly precipitation */}
+      {/* Hourly precipitation graphic */}
       <Infographic data={data} />
     </section>
   )

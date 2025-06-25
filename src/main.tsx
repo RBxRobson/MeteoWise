@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import { store } from './store/index.ts'
 
 import Main from './components/Main/index.tsx'
-import WeekBar from './components/WeekBar/index.tsx'
 
 import './styles/main.css'
 
@@ -13,7 +12,6 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <Main />
-      <WeekBar />
     </Provider>
   </StrictMode>,
 )

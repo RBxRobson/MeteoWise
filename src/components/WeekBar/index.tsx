@@ -3,24 +3,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
-import { useGetWeeklyForecastQuery } from '../../services/api'
 import { RootState } from '../../store'
 import { setDay } from '../../store/reducers/day'
-import { DailyForecast } from '../../types/api-response'
+import { DailyForecast, WeeklyForecastResponse } from '../../types/api-response'
 import { setBgColor } from '../../utils/setBgColor'
 import { setWeatherIcon } from '../../utils/setWeatherIcon'
 import { getWeatherDescription } from '../../utils/weatherCodes'
 
-const WeekBar = () => {
+type Props = {
+  data: WeeklyForecastResponse
+}
+
+const WeekBar = ({ data }: Props) => {
   const dispatch = useDispatch()
-
-  const { coordinates } = useSelector((state: RootState) => state.city)
   const { date: selectedDate, weatherCode } = useSelector((state: RootState) => state.day)
-
-  const { data, error, isLoading } = useGetWeeklyForecastQuery({
-    latitude: coordinates.latitude,
-    longitude: coordinates.longitude,
-  })
 
   const handleSelectDay = useCallback(
     (date: string, weatherCode: number) => {
@@ -38,9 +34,6 @@ const WeekBar = () => {
       weather_code: data.daily.weathercode[index],
     }))
   }, [data])
-
-  if (isLoading) return <p className="px-4 py-2">Carregando...</p>
-  if (error) return <p className="px-4 py-2 text-red-500">Erro ao carregar os dados.</p>
 
   const bgColor = setBgColor(weatherCode)
 

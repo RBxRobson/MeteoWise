@@ -17,7 +17,7 @@ const initialState: CityState = {
   },
   name: 'Barros Cassal',
   country: 'Brasil',
-  state: 'RS',
+  state: 'Rio Grande do Sul',
 }
 
 const citySlice = createSlice({
